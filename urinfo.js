@@ -21,6 +21,7 @@ async function getArxivMetadata(query, maxResults = 1) {
       authors: [...xmlData.matchAll(/<author>.*?<name>(.*?)<\/name>.*?<\/author>/gms)].map(a => a[1]),
       title: [...xmlData.matchAll(/<title>.*?<\/title>/gms)][0][1],
       year: [...xmlData.matchAll(/<published>(\d\d\d\d)/gms)][0][1],
+      abstract: [...xmlData.matchAll(/<summary>(.*?)<\/summary>/gms)][0][1],
     }
   } catch (error) {
     console.error('Error fetching arXiv data:', error)
