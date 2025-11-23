@@ -10,7 +10,7 @@ A JavaScript library to provide [URI](https://en.wikipedia.org/wiki/Uniform_Reso
 
 ### Books
 
-Book metadata is sourced from OpenLibrary. It should be available from in a JS environments.
+Book metadata is sourced from OpenLibrary. It should be available from all JS environments.
 
 ```js
 > const hobbit = await urinfo('urn:isbn:9780007322602')
