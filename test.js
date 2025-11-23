@@ -13,6 +13,10 @@ async function test() {
   assertEqual(hobbit.title, 'The Hobbit')
   assertEqual(hobbit.year, '1937')
   assertEqual(hobbit.authors[0], 'J.R.R. Tolkien')
+
+  const attention = await urinfo('https://arxiv.org/abs/1706.03762')
+
+  assertEqual(attention.year, '2017')
 }
 
 test()
