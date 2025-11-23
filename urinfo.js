@@ -9,6 +9,7 @@ const urinfo = async uri => {
       authors: result.docs[0].author_name,
       year: result.docs[0].first_publish_year,
       isbn: isbn,
+      openlibrary: `https://openlibrary.org/isbn/${isbn}`,
     }
   }
 }
