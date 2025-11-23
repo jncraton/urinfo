@@ -18,6 +18,7 @@ async function test() {
 
   assertEqual(attention.authors[0], 'Ashish Vaswani')
   assertEqual(attention.year, '2017')
+  assertEqual(attention.title, 'Attention Is All You Need')
 }
 
 test()
