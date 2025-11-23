@@ -10,6 +10,8 @@ A JavaScript library to provide [URI](https://en.wikipedia.org/wiki/Uniform_Reso
 
 ### Books
 
+Book metadata is sourced from OpenLibrary. It should be available from in a JS environments.
+
 ```js
 > const hobbit = await urinfo('urn:isbn:9780007322602')
 > hobbit.title
@@ -21,6 +23,8 @@ A JavaScript library to provide [URI](https://en.wikipedia.org/wiki/Uniform_Reso
 ```
 
 ### arXiv
+
+arXiv metadata is sourced from the arXiv API. It will not be available in the browser due to CORS rules.
 
 ```js
 > const attention = await urinfo('https://arxiv.org/abs/1706.03762')
