@@ -7,6 +7,8 @@ A JavaScript library to provide URI metadata
 
 ## Usage
 
+### Books
+
 ```js
 > const hobbit = await urinfo('urn:isbn:9780007322602')
 > hobbit.title
@@ -15,7 +17,11 @@ The Hobbit
 1937
 > hobbit.authors[0]
 'J.R.R. Tolkien'
+```
 
+### arXiv
+
+```js
 > const attention = await urinfo('https://arxiv.org/abs/1706.03762')
 > attention.authors[0]
 'Ashish Vaswani'
