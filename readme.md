@@ -3,7 +3,7 @@
 [![Lint](https://github.com/jncraton/urinfo/actions/workflows/lint.yml/badge.svg)](https://github.com/jncraton/urinfo/actions/workflows/lint.yml)
 [![Test](https://github.com/jncraton/urinfo/actions/workflows/test.yml/badge.svg)](https://github.com/jncraton/urinfo/actions/workflows/test.yml)
 
-A JavaScript library to provide URI metadata
+A JavaScript library to provide [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) metadata
 
 ## Usage
 
