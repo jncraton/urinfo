@@ -1,3 +1,32 @@
+async function getArxivMetadata(query, maxResults = 1) {
+  const baseUrl = 'http://export.arxiv.org/api/query'
+
+  const params = new URLSearchParams({
+    search_query: `all:${query}`,
+    start: '0',
+    max_results: String(maxResults),
+  })
+
+  const apiUrl = `${baseUrl}?${params.toString()}`
+
+  try {
+    const response = await fetch(apiUrl)
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    const xmlData = await response.text()
+
+    return {
+      authors: [...xmlData.matchAll(/<author>.*?<name>(.*?)<\/name>.*?<\/author>/gms)].map(a => a[1]),
+      year: [...xmlData.matchAll(/<published>(\d\d\d\d)/gms)][0][1],
+    }
+  } catch (error) {
+    console.error('Error fetching arXiv data:', error)
+    return ''
+  }
+}
+
 const urinfo = async uri => {
   if (uri.startsWith('urn:isbn:')) {
     const isbn = uri.slice(9)
@@ -11,5 +40,7 @@ const urinfo = async uri => {
       isbn: isbn,
       openlibrary: `https://openlibrary.org/isbn/${isbn}`,
     }
+  } else if (uri.startsWith('https://arxiv.org')) {
+    return getArxivMetadata(uri.split('/').slice(-1))
   }
 }
