@@ -15,4 +15,12 @@ The Hobbit
 1937
 > hobbit.authors[0]
 'J.R.R. Tolkien'
+
+> const attention = await urinfo('https://arxiv.org/abs/1706.03762')
+> attention.authors[0]
+'Ashish Vaswani'
+> attention.year
+'2017'
+> attention.title
+'Attention Is All You Need'
 ```
