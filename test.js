@@ -16,6 +16,7 @@ async function test() {
 
   const attention = await urinfo('https://arxiv.org/abs/1706.03762')
 
+  assertEqual(attention.authors[0], 'Ashish Vaswani')
   assertEqual(attention.year, '2017')
 }
 
