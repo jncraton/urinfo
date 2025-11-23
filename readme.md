@@ -12,9 +12,9 @@ A JavaScript library to provide [URI](https://en.wikipedia.org/wiki/Uniform_Reso
 ```js
 > const hobbit = await urinfo('urn:isbn:9780007322602')
 > hobbit.title
-The Hobbit
+'The Hobbit'
 > hobbit.year
-1937
+'1937'
 > hobbit.authors[0]
 'J.R.R. Tolkien'
 ```
